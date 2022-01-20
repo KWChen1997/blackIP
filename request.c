@@ -22,6 +22,8 @@ void get_ip_list(struct list *list){
 	char buf[1024];
 	char *ip_token;
 	char *mask_token;
+	if(list->data == NULL) list_init(list);
+
 	while(readline(fd[0],buf,0)){
 		if(buf[0] == '#')
 			continue;

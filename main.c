@@ -8,6 +8,8 @@ int main(const int argc, char *argv[]){
 	struct list list;
 	list_init(&list);
 	get_ip_list(&list);
+	list_clear(&list);
+	get_ip_list(&list);
 	//list_print(&list);
 	if(list_match(&list, str2ip(argv[1])))
 		puts("hit");
