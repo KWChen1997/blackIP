@@ -40,13 +40,16 @@ int list_match(struct list *list, uint32_t ip){
 	int e = list->count;
 	int mid = (s+e)/2;
 	while(s != e){
-		if(inrange(list->data+mid,ip))
+		mid = (s+e)/2;
+		if(inrange(list->data+mid,ip)){
 			return 1;
+		}
+		if(s == mid)
+			return 0;
 		if(ip > list->data[mid].ip)
 			s = mid;
 		else
 			e = mid;
-		mid = (s+e)/2;
 	}
 	return 0;
 }
