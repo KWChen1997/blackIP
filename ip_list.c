@@ -40,7 +40,6 @@ int list_match(struct list *list, uint32_t ip){
 	int e = list->count;
 	int mid = (s+e)/2;
 	while(s != e){
-		printf("%d,%d,%d\n", s,e,mid);
 		if(inrange(list->data+mid,ip))
 			return 1;
 		if(ip > list->data[mid].ip)
